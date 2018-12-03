@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//TODO:★
 class 숫자야구 {
     //모르겠는뎁... 다시풀기
     int solution(int[][] baseball) {
