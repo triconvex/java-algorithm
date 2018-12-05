@@ -1,4 +1,4 @@
-package Level_3;
+package Level_1;
 
 /*
 문제 설명

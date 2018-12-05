@@ -1,5 +1,6 @@
-package Level_3;
+package Level_1;
 
+import Level_1.가운데글자가져오기;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
