@@ -13,7 +13,20 @@ s는 길이 4 이상, 20이하인 문자열입니다.
 
 public class 핸드폰번호가리기 {
     public String solution(String phone_number) {
-        String answer = "";
-        return answer;
+        String number = phone_number.substring(phone_number.length() - 4, phone_number.length());
+        StringBuilder stars = new StringBuilder();
+        for (int i = 0; i < phone_number.length() - 4; i++) {
+            stars.append("*");
+        }
+        return stars + number;
+    }
+
+    //성능 수십배 차이, char, toCharArray, String.valueOf();
+    public String 참고할만한_풀이(String phone_number) {
+        char[] ch = phone_number.toCharArray();
+        for(int i = 0; i < ch.length - 4; i ++){
+            ch[i] = '*';
+        }
+        return String.valueOf(ch);
     }
 }
