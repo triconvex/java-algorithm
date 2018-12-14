@@ -20,9 +20,9 @@ import java.util.stream.Stream;
  */
 
 public class 전화번호목록 {
-    public boolean solution(String[] phone_book) {
-        ArrayList<String> sorted = new ArrayList<>(Stream.of(phone_book).sorted(Comparator.comparing(String::length)).collect(Collectors.toList()));
-        ArrayList<String> removed = new ArrayList<>(Stream.of(phone_book).sorted(Comparator.comparing(String::length)).collect(Collectors.toList()));
+    public boolean solution(String[] phoneBook) {
+        ArrayList<String> sorted = new ArrayList<>(Stream.of(phoneBook).sorted(Comparator.comparing(String::length)).collect(Collectors.toList()));
+        ArrayList<String> removed = new ArrayList<>(Stream.of(phoneBook).sorted(Comparator.comparing(String::length)).collect(Collectors.toList()));
 
         for (String selected : sorted) {
             removed.remove(selected);
@@ -35,11 +35,22 @@ public class 전화번호목록 {
         return true;
     }
 
-    public boolean 참고할만한_풀이(String[] phone_book) {
-        for(int i=0; i<phone_book.length-1; i++) {
-            for(int j=i+1; j<phone_book.length; j++) {
-                if(phone_book[i].startsWith(phone_book[j])) {return false;}
-                if(phone_book[j].startsWith(phone_book[i])) {return false;}
+    public boolean 참고할만한_풀이(String[] phoneBook) {
+        for(String selected : phoneBook) {
+            for(String other : phoneBook) {
+                if(other.length() > selected.length() && other.substring(0, selected.length()).equals(selected)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean 참고할만한_풀이2(String[] phoneBook) {
+        for(int i=0; i<phoneBook.length-1; i++) {
+            for(int j=i+1; j<phoneBook.length; j++) {
+                if(phoneBook[i].startsWith(phoneBook[j])) {return false;}
+                if(phoneBook[j].startsWith(phoneBook[i])) {return false;}
             }
         }
         return true;
