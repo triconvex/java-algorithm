@@ -21,8 +21,12 @@ import java.util.stream.Stream;
 
 public class 전화번호목록 {
     public boolean solution(String[] phoneBook) {
-        ArrayList<String> sorted = new ArrayList<>(Stream.of(phoneBook).sorted(Comparator.comparing(String::length)).collect(Collectors.toList()));
-        ArrayList<String> removed = new ArrayList<>(Stream.of(phoneBook).sorted(Comparator.comparing(String::length)).collect(Collectors.toList()));
+        ArrayList<String> sorted = Stream.of(phoneBook)
+                .sorted(Comparator.comparing(String::length))
+                .collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<String> removed = Stream.of(phoneBook)
+                .sorted(Comparator.comparing(String::length))
+                .collect(Collectors.toCollection(ArrayList::new));
 
         for (String selected : sorted) {
             removed.remove(selected);
