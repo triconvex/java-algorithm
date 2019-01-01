@@ -8,7 +8,6 @@ public class WWTest {
 
     @Test
     public void solution() {
-        wwdom resolve = new wwdom();
         String S = "011100";
 //        assertEquals(resolve.solution(S), 7);
 
