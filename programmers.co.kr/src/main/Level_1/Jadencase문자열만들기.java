@@ -5,6 +5,24 @@ import java.util.stream.Collectors;
 
 public class Jadencase문자열만들기 {
     public String solution(String s) {
+        boolean flag = true;
+        StringBuilder low = new StringBuilder();
+
+        for (String letter :s.toLowerCase().split("")){
+            if(flag) {
+                low.append(letter.toUpperCase());
+            } else {
+                low.append(letter);
+            }
+
+            flag = letter.equals(" ");
+        }
+
+        return low.toString();
+    }
+
+
+    public String solution2(String s) {
 //      이것도 런타임에러
         String[] temp = s.toLowerCase().split(" ");
         StringBuilder answer = new StringBuilder();
