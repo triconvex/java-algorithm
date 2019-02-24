@@ -10,7 +10,7 @@ public class Q3 {
     public int[] solution(int[] healths, int[][] items) {
         Arrays.sort(healths);
 
-        Map<Integer, Integer> item = new TreeMap<>();
+        TreeMap<Integer, Integer> item = new TreeMap<>();
         for (int[] ints : items) {
             item.put(ints[0], ints[1]);
         }
@@ -18,7 +18,7 @@ public class Q3 {
         List<Integer> answer = new ArrayList<>();
 
         for (Integer currentHp : healths) {
-            for (Integer risingAtk : ((TreeMap<Integer, Integer>) item).descendingKeySet()) {
+            for (Integer risingAtk : item.descendingKeySet()) {
                 if(currentHp - item.get(risingAtk) >= 100) {
                     answer.add(getIndex(items, risingAtk));
                     item.remove(risingAtk);

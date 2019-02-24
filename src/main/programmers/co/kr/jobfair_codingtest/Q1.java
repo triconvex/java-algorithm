@@ -9,6 +9,7 @@ import static org.testng.Assert.assertEquals;
 
 public class Q1 {
     //TODO : 못품.. 주어진 수가 3개의 서로 다른 소수의 합으로 나오는 경우의 수..
+    //TODO : 백준 1260번 DFS BFS
 
     public int solution(int n) {
         List<Integer> primes = new ArrayList<>();
